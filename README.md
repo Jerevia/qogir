@@ -69,7 +69,7 @@ python:
 
 command-params: # Parameters of command `spark-commit`
  HADOOP_CONF_DIR:
-  /opt/hadoop/etc/hadoop
+  /etc/hadoop
  MASTER:
   yarn
  SUBMIT_PARAMS:

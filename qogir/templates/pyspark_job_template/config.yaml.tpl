@@ -27,7 +27,7 @@ command-params:
  SUBMIT_PARAMS:
   --driver-memory 6G
   --conf spark.default.parallelism=200
-  --conf spark.driver.maxResultSize=2G  
+  --conf spark.driver.maxResultSize=2G
   --num-executors 20
   --executor-memory 4G
   --executor-cores 2
