@@ -1,0 +1,4 @@
+graft qogir
+recursive-include data *
+global-exclude __pycache__
+global-exclude *.py[co]
