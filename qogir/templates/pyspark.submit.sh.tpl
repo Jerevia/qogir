@@ -1,4 +1,3 @@
-
 WD={job_path}
 MASTER='{MASTER}'
 
