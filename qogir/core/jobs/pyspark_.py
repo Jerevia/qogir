@@ -85,27 +85,6 @@ class SparkJob(object):
         self.spark = SparkSession.builder.appName(
             'spark-session').getOrCreate()
 
-    def _configure_hdfs(self):
-        hdfs_base_url = self.configs.get('hdfs-url')
-
-        client_klasses = [
-            'hdfs.client:Client',
-            'hdfs.client:InsecureClient',
-            'hdfs.client:TokenClient',
-            'hdfs.ext.kerberos:KerberosClient'
-        ]
-
-        if hdfs_base_url:
-            _client_cls = self.configs.get(
-                'hdfs-client-cls', 'hdfs.client:InsecureClient')
-            assert _client_cls in client_klasses
-
-            _module_name, _cls_name = _client_cls.split(':')
-            klass = getattr(
-                importlib.import_module(_module_name), _cls_name)
-
-            self.hdfs = klass(hdfs_base_url)
-
     def _configure_include_paths(self):
         include_paths = self.configs.get('include_paths')
         if not include_paths:
@@ -136,7 +115,6 @@ class SparkJob(object):
 
         self._configure_logger()
         self._configure_spark()
-        self._configure_hdfs()
         self._configure_include_paths()
 
         self._main_function = SparkJob._get_function(

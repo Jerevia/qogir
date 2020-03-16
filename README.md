@@ -58,12 +58,6 @@ app-name:
 log-level:
  INFO
 
-hdfs-client-cls:
-  hdfs.client:InsecureClient
-
-hdfs-url:
- http://hadoop-host:50070
-
 python:
  <python-version> # python version, must be set before running
 
@@ -95,7 +89,6 @@ from __future__ import print_function, absolute_import, unicode_literals
 def main(cls):
     cls.spark   # spark session
     cls.sc      # spark context
-    cls.hdfs    # hdfs client, an instance of InscureClient from hdfs
     cls.configs # configurations from config.yaml
     cls.params
 ```

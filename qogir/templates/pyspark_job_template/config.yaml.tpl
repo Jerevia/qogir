@@ -10,12 +10,6 @@ app-name:
 log-level:
  INFO
 
-hdfs-client-cls:
-  hdfs.client:InsecureClient
-
-hdfs-url:
- http://<hadoop-host>:50070
-
 python:
  <python-version>
 
