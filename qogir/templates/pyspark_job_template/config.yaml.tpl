@@ -1,30 +1,23 @@
-job-type:
- pyspark
+job-type: pyspark
 
-entry:
- job:main
+entry: job:main
 
-app-name:
- app
+app-name: app
 
-log-level:
- INFO
+log-level: INFO
 
-python:
- <python-version>
+python: <python-version>
 
 command-params:
- HADOOP_CONF_DIR:
-  /etc/hadoop
- MASTER:
-  yarn
- SUBMIT_PARAMS:
-  --driver-memory 6G
-  --conf spark.default.parallelism=200
-  --conf spark.driver.maxResultSize=2G
-  --num-executors 20
-  --executor-memory 4G
-  --executor-cores 2
+    HADOOP_CONF_DIR: /etc/hadoop
+    HADOOP_USER_NAME: $USER
+    MASTER: yarn
+    SUBMIT_PARAMS:
+        --driver-memory 6G
+        --conf spark.default.parallelism=200
+        --conf spark.driver.maxResultSize=2G
+        --num-executors 20
+        --executor-memory 4G
+        --executor-cores 2
 
-include_paths:
- /path/to/project
+include_paths: /path/to/project

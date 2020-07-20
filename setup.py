@@ -66,8 +66,7 @@ setup(
     include_package_data=True,
 
     install_requires=[
-        'pyyaml',
-        'virtualenv',
+        'pyyaml'
     ],
 
     python_requires='>=2.6',

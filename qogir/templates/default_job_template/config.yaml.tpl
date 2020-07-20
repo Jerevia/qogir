@@ -1,11 +1,7 @@
-job-type:
- default
+job-type: default
 
-entry:
- job:main
+entry: job:main
 
-python:
- <python-version>
+python: <python-version>
 
-include_paths:
- /path/to/project
+include_paths: /path/to/project
